@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="240" viewBox="0 0 180 240">
+    
+    <g transform="translate(90,70)" fill="#D4AF37" opacity="0.32">
+      <path d="M0,-30 C26,-30 40,-8 40,12 C40,34 24,48 4,48 C-14,48 -26,38 -26,22 C-26,10 -18,2 -6,2 C4,2 12,9 12,19 C12,27 6,33 -1,33 C-7,33 -11,29 -11,24 C-11,20 -8,17 -4,17 C-1,17 1,19 1,22" stroke="none"/>
+      <path d="M0,-30 C-26,-30 -40,-8 -40,12 C-40,34 -24,48 -4,48" stroke="none" transform="scale(-1,1)" opacity="0.55"/>
+      <circle cx="0" cy="-38" r="3.2"/>
+      <circle cx="0" cy="40" r="2.4" opacity="0.7"/>
+      <circle cx="26" cy="-14" r="2" opacity="0.6"/>
+      <circle cx="-26" cy="-14" r="2" opacity="0.6"/>
+    </g>
+    
+    <g transform="translate(45,180) rotate(180)" fill="#D4AF37" opacity="0.24">
+      <path d="M0,-30 C26,-30 40,-8 40,12 C40,34 24,48 4,48 C-14,48 -26,38 -26,22 C-26,10 -18,2 -6,2 C4,2 12,9 12,19 C12,27 6,33 -1,33 C-7,33 -11,29 -11,24 C-11,20 -8,17 -4,17 C-1,17 1,19 1,22" stroke="none"/>
+      <path d="M0,-30 C-26,-30 -40,-8 -40,12 C-40,34 -24,48 -4,48" stroke="none" transform="scale(-1,1)" opacity="0.55"/>
+      <circle cx="0" cy="-38" r="3.2"/>
+      <circle cx="0" cy="40" r="2.4" opacity="0.7"/>
+      <circle cx="26" cy="-14" r="2" opacity="0.6"/>
+      <circle cx="-26" cy="-14" r="2" opacity="0.6"/>
+    </g>
+    
+    <g transform="translate(135,180) rotate(180)" fill="#D4AF37" opacity="0.24">
+      <path d="M0,-30 C26,-30 40,-8 40,12 C40,34 24,48 4,48 C-14,48 -26,38 -26,22 C-26,10 -18,2 -6,2 C4,2 12,9 12,19 C12,27 6,33 -1,33 C-7,33 -11,29 -11,24 C-11,20 -8,17 -4,17 C-1,17 1,19 1,22" stroke="none"/>
+      <path d="M0,-30 C-26,-30 -40,-8 -40,12 C-40,34 -24,48 -4,48" stroke="none" transform="scale(-1,1)" opacity="0.55"/>
+      <circle cx="0" cy="-38" r="3.2"/>
+      <circle cx="0" cy="40" r="2.4" opacity="0.7"/>
+      <circle cx="26" cy="-14" r="2" opacity="0.6"/>
+      <circle cx="-26" cy="-14" r="2" opacity="0.6"/>
+    </g>
+    
+    <g transform="translate(90,150) scale(0.55)" fill="#FBF8F2" opacity="0.17600000000000002">
+      <path d="M0,-30 C26,-30 40,-8 40,12 C40,34 24,48 4,48 C-14,48 -26,38 -26,22 C-26,10 -18,2 -6,2 C4,2 12,9 12,19 C12,27 6,33 -1,33 C-7,33 -11,29 -11,24 C-11,20 -8,17 -4,17 C-1,17 1,19 1,22" stroke="none"/>
+      <path d="M0,-30 C-26,-30 -40,-8 -40,12 C-40,34 -24,48 -4,48" stroke="none" transform="scale(-1,1)" opacity="0.55"/>
+      <circle cx="0" cy="-38" r="3.2"/>
+      <circle cx="0" cy="40" r="2.4" opacity="0.7"/>
+      <circle cx="26" cy="-14" r="2" opacity="0.6"/>
+      <circle cx="-26" cy="-14" r="2" opacity="0.6"/>
+    </g>
+  </svg>

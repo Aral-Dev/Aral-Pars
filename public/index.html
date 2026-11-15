@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aral Pars · پنل مدیریت</title>
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/assets/app.css">
+  <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <a class="brand" href="#" onclick="switchTab('dash');return false">
+        <img src="/assets/logo-128.png" alt="Aral Pars">
+        <span>
+          <span class="t">Aral Pars</span><br>
+          <span class="s">یک پورت، همهٔ مسیرها</span>
+        </span>
+      </a>
+      <nav class="tabs">
+        <button data-tab="dash" class="on">داشبورد</button>
+        <button data-tab="configs">کانفیگ‌ها</button>
+        <button data-tab="subs">سابسکریپشن</button>
+        <button data-tab="settings">تنظیمات</button>
+        <button class="out" id="btn-logout" title="خروج">خروج</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+
+    <!-- ======================= DASHBOARD ======================= -->
+    <section class="section on" id="sec-dash">
+      <div class="stats">
+        <div class="stat"><div class="k">ترافیک امروز</div><div class="v" id="st-day">—</div><div class="sub" id="st-day-sub">&nbsp;</div></div>
+        <div class="stat"><div class="k">ترافیک این ماه</div><div class="v" id="st-month">—</div><div class="sub" id="st-month-sub">&nbsp;</div></div>
+        <div class="stat"><div class="k">سرعت لحظه‌ای</div><div class="v" id="st-live">—</div><div class="sub">Upload / Download</div></div>
+        <div class="stat"><div class="k">اتصال‌های فعال</div><div class="v" id="st-active">0</div><div class="sub">جریان‌های باز</div></div>
+      </div>
+
+      <div class="card">
+        <h2><span class="ic">◈</span> وضعیت موتورها و پروتکل‌ها</h2>
+        <div class="status-pills" id="engine-pills" style="margin-bottom:14px">
+          <span class="pill" id="pill-singbox"><span class="dot"></span> sing-box</span>
+          <span class="pill" id="pill-xray"><span class="dot"></span> Xray-core</span>
+          <span class="pill" id="pill-https"><span class="dot"></span> TLS داخلی</span>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>پروتکل</th><th>مسیر</th><th>وضعیت</th><th>ترافیک امروز</th></tr></thead>
+          <tbody id="proto-body"><tr><td colspan="4" class="muted">در حال بارگذاری…</td></tr></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h2><span class="ic">◈</span> اطلاعات سرور</h2>
+        <div class="grid2">
+          <div class="field"><label>دامنه / آدرس لینک‌ها</label><input class="ltr" type="text" id="info-host" readonly></div>
+          <div class="field"><label>پورت عمومی</label><input class="ltr" type="text" id="info-port" readonly></div>
+          <div class="field"><label>UUID</label><input class="ltr mono" type="text" id="info-uuid" readonly></div>
+          <div class="field"><label>نسخهٔ پنل</label><input type="text" id="info-version" readonly value="Aral Pars 1.0"></div>
+        </div>
+        <div class="row mt">
+          <button class="btn ghost sm" id="btn-copy-uuid">کپی UUID</button>
+          <button class="btn ghost sm" id="btn-traffic-reset">بازنشانی شمارندهٔ ترافیک</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CONFIGS ======================= -->
+    <section class="section" id="sec-configs">
+      <div class="card">
+        <h2><span class="ic">◈</span> کانفیگ‌های اتصال</h2>
+        <div class="row" style="margin-bottom:14px">
+          <button class="btn ghost sm" id="btn-copy-all">کپی همهٔ لینک‌ها</button>
+          <button class="btn ghost sm" id="btn-refresh-configs">به‌روزرسانی</button>
+          <span class="muted">هر کانفیگ روی همان پورت عمومی واحد کار می‌کند.</span>
+        </div>
+        <div id="cfg-list"><div class="muted">در حال دریافت…</div></div>
+      </div>
+    </section>
+
+    <!-- ======================= SUBSCRIPTION ======================= -->
+    <section class="section" id="sec-subs">
+      <div class="card">
+        <h2><span class="ic">◈</span> لینک سابسکریپشن</h2>
+        <div class="field">
+          <label>لینک اصلی (Base64 — v2rayN / v2rayNG / Hiddify)</label>
+          <div class="copybox">
+            <input class="ltr mono" type="text" id="sub-main" readonly>
+            <button class="btn sm" data-copy="sub-main">کپی</button>
+          </div>
+          <div class="hint">توکن سابسکریپشن را محرمانه نگه دارید؛ هر کسی که آن را داشته باشد می‌تواند کانفیگ‌ها را ببیند.</div>
+        </div>
+        <div class="field">
+          <label>سابسکریپشن Clash Meta (YAML)</label>
+          <div class="copybox">
+            <input class="ltr mono" type="text" id="sub-clash" readonly>
+            <button class="btn sm" data-copy="sub-clash">کپی</button>
+          </div>
+        </div>
+        <div class="field">
+          <label>سابسکریپشن sing-box (JSON)</label>
+          <div class="copybox">
+            <input class="ltr mono" type="text" id="sub-sb" readonly>
+            <button class="btn sm" data-copy="sub-sb">کپی</button>
+          </div>
+        </div>
+        <div class="row">
+          <span class="muted">نام همهٔ نودها با برند <span class="gold">Aral</span> ساخته می‌شود.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SETTINGS ======================= -->
+    <section class="section" id="sec-settings">
+      <div class="card">
+        <h2><span class="ic">◈</span> تنظیمات کلی</h2>
+        <div class="grid2">
+          <div class="field">
+            <label>رمز عبور جدید پنل</label>
+            <input class="ltr" type="password" id="set-password" placeholder="خالی بگذارید تا تغییر نکند" minlength="8">
+            <div class="hint">حداقل ۸ کاراکتر. پس از تغییر باید دوباره وارد شوید.</div>
+          </div>
+          <div class="field">
+            <label>دامنهٔ لینک‌ها (اختیاری)</label>
+            <input class="ltr" type="text" id="set-domain" placeholder="مثال: aral.example.com">
+            <div class="hint">اگر دامنه یا آی‌پی اختصاصی دارید اینجا وارد کنید و Restart کنید.</div>
+          </div>
+        </div>
+        <button class="btn" id="btn-save-settings">ذخیرهٔ تنظیمات</button>
+      </div>
+
+      <div class="card">
+        <h2><span class="ic">◈</span> پروتکل‌ها</h2>
+        <div class="muted" style="margin-bottom:10px">فعال/غیرفعال کردن کانفیگ‌ها؛ تغییرها با Restart سرور اعمال می‌شوند.</div>
+        <div id="proto-switches">در حال بارگذاری…</div>
+      </div>
+
+      <div class="card">
+        <h2><span class="ic">◈</span> تنظیمات پیشرفتهٔ حداقلی</h2>
+        <div class="grid2">
+          <div class="field">
+            <label>رمز Shadowsocks</label>
+            <input class="ltr mono" type="text" id="set-ss-pass">
+            <div class="hint">برای cipher-های 2022 باید کلید base64 با طول صحیح باشد.</div>
+          </div>
+          <div class="field">
+            <label>روش رمزنگاری Shadowsocks</label>
+            <select id="set-ss-method">
+              <option>aes-256-gcm</option>
+              <option>aes-128-gcm</option>
+              <option>chacha20-ietf-poly1305</option>
+              <option>2022-blake3-aes-128-gcm</option>
+              <option>2022-blake3-aes-256-gcm</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn ghost" id="btn-save-advanced">ذخیرهٔ تنظیمات پیشرفته</button>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span class="boteh-mark">❂</span> Aral Pars — سبک، سریع، تک‌پورت
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="/__PANELPATH__/app.js"></script>
+</body>
+</html>
